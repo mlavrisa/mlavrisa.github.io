@@ -1,7 +1,393 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matt Lavrisa's Portfolio</title>
+    <style>
+      /* Global styles */
+      body {
+        background-color: white;
+        color: #333;
+        font-family: "Palatino", "Palatino Linotype", "Palatino LT STD",
+          "Book Antiqua";
+        margin: 0;
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3 {
+        margin: 0.5em 0;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s;
+      }
+
+      /* Banner */
+      .banner {
+        position: relative;
+        background: url("img/AuroraMeteor.jpg") no-repeat center 90%;
+        background-size: cover;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-family: "Helvetica", sans-serif;
+      }
+      .banner h1 {
+        font-size: 3em;
+        display: inline;
+        vertical-align: middle;
+        margin: 0;
+      }
+      .banner .linkedin {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+      .banner .tagline {
+        font-size: 1.2em;
+        margin-top: 10px;
+      }
+
+      /* Section container */
+      .section {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Projects grid */
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .project-tile {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: border 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        background: white;
+      }
+      .project-tile:hover {
+        border: 1px solid #999;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .project-tile img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+      .project-info {
+        padding: 10px 20px;
+      }
+
+      /* Publications list */
+      .publications li {
+        margin: 8px 0;
+      }
+      .publications a {
+        color: #333;
+        transition: color 0.3s;
+      }
+      .publications a:hover {
+        color: #47f;
+      }
+
+      /* Image gallery */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .gallery-item {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: border 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        background: white;
+      }
+      .gallery-item:hover {
+        border: 1px solid #999;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .gallery-item img {
+        display: block;
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+      .gallery-item .caption {
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 0.9em;
+      }
+
+      /* Modal for enlarged photos */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-content {
+        max-width: 90%;
+        max-height: 90%;
+        border: 5px solid white;
+      }
+    </style>
+  </head>
   <body>
-    <h1>Matt Lavrisa's Portfolio Page</h1>
-    <p>Coming Soon...</p>
+    <!-- Banner Section -->
+    <div class="banner">
+      <div class="banner-content">
+        <h1>
+          Matt Lavrisa
+          <!-- LinkedIn Icon, Shamelessly Lifted from Their Site, You're Welcome Linkedin -->
+          <a href="https://www.linkedin.com/in/mattlavrisa" target="_blank">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              data-supported-dps="24x24"
+              fill="white"
+              class="mercado-match"
+              width="24"
+              height="24"
+              focusable="false"
+            >
+              <path
+                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
+              ></path>
+            </svg>
+          </a>
+        </h1>
+        <div class="tagline">
+          Curious about everything, driven by the pursuit of understanding.
+        </div>
+      </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="section" id="about">
+      <h2>About Me</h2>
+      <p>
+        I believe the best engineering starts with deep understanding. Whether
+        in machine learning, AI interpretability, materials science, or hardware
+        prototyping, I approach problems through first principles and hands-on
+        iteration. My work has spanned startups, scientific research, and
+        product development—always with a focus on clarity, efficiency, and
+        building systems that work in the real world. When I&apos;m not
+        designing or prototyping, I&apos;m thinking about how technology shapes
+        the future—or questioning the assumptions we take for granted.
+      </p>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="section" id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div
+          class="project-tile"
+          onclick="location.href='https://github.com/mlavrisa/mirror-ray-tracer'"
+        >
+          <img src="img/off_axis_coma_3d.png" alt="Mirror Ray Tracer" />
+          <div class="project-info">
+            <h3>Mirror Ray Tracer</h3>
+            <p>
+              A ray tracer for conic-section-derived mirrors, with custom 3D
+              visualization, developed in NumPy/CuPy/ModernGL.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Publications Section -->
+    <div class="section" id="publications">
+      <h2>Publications</h2>
+      <ul class="publications">
+        <li>
+          <a
+            href="https://onlinelibrary.wiley.com/doi/10.1002/ente.201500250"
+            target="_blank"
+            >Salem, N., Lavrisa, M., & Abu&#45;Lebdeh, Y. (2016).
+            Ionically&#45;functionalized poly (thiophene) conductive polymers as
+            binders for silicon and graphite anodes for li&#45;ion batteries.
+            Energy Technology, 4(2), 331-340.</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://patents.google.com/patent/US20210373405A1/en"
+            target="_blank"
+            >US20210373405A1: Optical activation of chemical entities in
+            electrophoretic dispersions for display devices (Granted JP, CN,
+            TW)</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://patents.google.com/patent/US12019347B2/en"
+            target="_blank"
+            >US12019347B2: Electrophoretic display assemblies and devices and
+            methods of manufacture thereof (Granted US)</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://patents.google.com/patent/US20250004346A1/en"
+            target="_blank"
+            >US20250004346A1: Tunable coupled fluorescence display devices
+            (Pending)</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://patents.google.com/patent/US20240241421A1/en"
+            target="_blank"
+            >US20240241421A1: Electrophoretic display devices (Pending)</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://patents.google.com/patent/US20230176440A1/en"
+            target="_blank"
+            >US20230176440A1: Microspheres for electrophoretic displays and
+            methods of manufacture thereof (Pending)</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://patents.google.com/patent/US20240247185A1/en"
+            target="_blank"
+            >US20240247185A1: Improved methods of charged electrophoretic
+            particle manufacture (Pending)</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Interests Section -->
+    <div class="section" id="interests">
+      <h2>Image Gallery</h2>
+      <h3>Astrophotography</h3>
+      <div class="gallery">
+        <div class="gallery-item" onclick="openModal(this.children[0].src)">
+          <img src="img/M31.jpg" alt="M31" />
+          <div class="caption">
+            Andromeda Galaxy (M31) the nearest major galaxy to our own, about
+            2.5 million ly away
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this.children[0].src)">
+          <img src="img/M45.jpg" alt="M45" />
+          <div class="caption">
+            Pleiades Star Cluster (M45) the nearest Messier object to Earth at
+            444 ly
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this.children[0].src)">
+          <img src="img/M42.jpg" alt="M42" />
+          <div class="caption">
+            Orion Nebula (M42) a turbulent and bright stellar nursery
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this.children[0].src)">
+          <img src="img/C2023A3.jpg" alt="C/2023 A3" />
+          <div class="caption">
+            Comet C/2023 A3 with prominant anti-tail over the Rockies, Messier
+            72 globular cluster visible in the tail
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this.children[0].src)">
+          <img src="img/TotalEclipse.jpg" alt="Solar Eclipse" />
+          <div class="caption">April 8th 2024 Total Solar Eclipse</div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this.children[0].src)">
+          <img src="img/DiamondRing.jpg" alt="Solar Eclipse" />
+          <div class="caption">
+            &quot;Diamond Ring&quot; during April 8th Solar Eclipse
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this.children[0].src)">
+          <img src="img/Markarian.jpg" alt="Galactic chain, Virgo Cluster" />
+          <div class="caption">
+            Markarian&apos;s Chain (M84, M86, M87, several NGCs), about 50
+            million ly away in the Virgo Galaxy Cluster
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this.children[0].src)">
+          <img src="img/M33.jpg" alt="M33" />
+          <div class="caption">
+            Triangulum Galaxy (M33), our second-nearest major galactic neighbour
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this.children[0].src)">
+          <img src="img/AuroraMeteor-full.jpg" alt="Aurora and Meteor" />
+          <div class="caption">Aurora during a Meteor Shower</div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this.children[0].src)">
+          <img src="img/NGC7000.jpg" alt="NGC 7000" />
+          <div class="caption">
+            North America Nebula (NGC 7000), the glowing hydrogen is being
+            excited by an incredibly hot star hidden behind the dust
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this.children[0].src)">
+          <img src="img/Cassiopeia.jpg" alt="Cassiopeia" />
+          <div class="caption">
+            Cassiopeia against the Milky Way, Andromeda visible above
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this.children[0].src)">
+          <img src="img/M81M82.jpg" alt="M81 and M82" />
+          <div class="caption">
+            Bode&apos;s Galaxy and Cigar Galaxy (M81 and M82), the core of a
+            galaxy cluster about 12 million ly away
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Enlarged Photo -->
+    <div id="modal" class="modal" onclick="closeModal()">
+      <img class="modal-content" id="modal-img" alt="Enlarged view" />
+    </div>
+
+    <script>
+      function openModal(src) {
+        var modal = document.getElementById("modal");
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "flex";
+        modalImg.src = src;
+      }
+      function closeModal() {
+        var modal = document.getElementById("modal");
+        modal.style.display = "none";
+      }
+      // Prevent clicks on the modal image from closing the modal
+      document
+        .getElementById("modal-img")
+        .addEventListener("click", function (event) {
+          event.stopPropagation();
+        });
+    </script>
   </body>
 </html>
