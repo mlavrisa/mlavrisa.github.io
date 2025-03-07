@@ -63,10 +63,28 @@
       }
 
       /* Projects grid */
-      .projects {
+      .projects,
+      .gallery {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+      }
+      /* Smaller screen */
+      @media (max-width: 900px) {
+        .projects,
+        .gallery {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+      }
+      @media (max-width: 540px) {
+        .projects,
+        .gallery {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
+        }
       }
       .project-tile {
         border: 1px solid #ccc;
@@ -101,13 +119,11 @@
       .publications a:hover {
         color: #47f;
       }
+      .publications a:active {
+        color: #47f;
+      }
 
       /* Image gallery */
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
       .gallery-item {
         border: 1px solid #ccc;
         border-radius: 10px;
@@ -216,12 +232,25 @@
             </p>
           </div>
         </div>
+        <div
+          class="project-tile"
+          onclick="location.href='https://github.com/mlavrisa/sleepypi'"
+        >
+          <img src="img/sleepypi.gif" alt="Sleep Tracking System" />
+          <div class="project-info">
+            <h3>Sleep Tracking System</h3>
+            <p>
+              A system for tracking and analyzing sleep patterns developed for
+              Raspberry Pi and the NoIR camera module.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Publications Section -->
     <div class="section" id="publications">
-      <h2>Publications</h2>
+      <h2>Publications and Patents</h2>
       <ul class="publications">
         <li>
           <a
