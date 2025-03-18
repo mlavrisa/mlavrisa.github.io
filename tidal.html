@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matt Lavrisa's Portfolio - Tidal Productivity App</title>
+    <style>
+      /* Global styles */
+      body {
+        background-color: white;
+        color: #333;
+        font-family: "Palatino", "Palatino Linotype", "Palatino LT STD",
+          "Book Antiqua";
+        margin: 0;
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3 {
+        margin: 0.5em 0;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s;
+      }
+
+      /* Banner */
+      .banner {
+        position: relative;
+        background: url("img/AuroraMeteor.jpg") no-repeat center 90%;
+        background-size: cover;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-family: "Helvetica", sans-serif;
+      }
+      .banner h1 {
+        font-size: 3em;
+        display: inline;
+        vertical-align: middle;
+        margin: 0;
+      }
+      .banner .linkedin {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+      .banner .tagline {
+        font-size: 1.2em;
+        margin-top: 10px;
+      }
+
+      /* Section container */
+      .section {
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Banner Section -->
+    <div class="banner">
+      <div class="banner-content">
+        <h1>
+          <a href="index.html">Matt Lavrisa</a>
+          <!-- LinkedIn Icon, Shamelessly Lifted from Their Site, You're Welcome Linkedin -->
+          <a href="https://www.linkedin.com/in/mattlavrisa" target="_blank">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              data-supported-dps="24x24"
+              fill="white"
+              class="mercado-match"
+              width="24"
+              height="24"
+              focusable="false"
+            >
+              <path
+                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
+              ></path>
+            </svg>
+          </a>
+        </h1>
+        <div class="tagline">
+          Curious about everything, driven by the pursuit of understanding.
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="about">
+      <h2>About Tidal Productivity App</h2>
+      <p>
+        Meet Tidal &mdash; an all-in-one productivity platform that serves as
+        your personal accountability buddy, to-do manager, habit tracker, and
+        journaling companion. Tidal harnesses the power of an encouraging
+        language model that greets you each morning, checks in on your progress,
+        and offers helpful advice and thoughtful reframing when setbacks occur.
+        By integrating your habits list, daily tasks, and personal bio, Tidal
+        tailors its guidance to what matters most to you.
+      </p>
+      <p>
+        Every morning, Tidal greets you and prompts a reflective discussion
+        about your previous day&apos;s progress and today&apos;s plans. It even
+        transforms your daily chat into a journal entry and compiles weekly and
+        monthly summaries for you to review and edit. This comprehensive
+        approach encourages a solid morning routine and continuous personal
+        growth, helping you achieve your goals.
+      </p>
+      <div style="text-align: center">
+        <img
+          src="img/assistant.png"
+          style="max-width: 100%"
+          alt="Tidal main interface"
+        />
+      </div>
+      <p>
+        The main interface, illustrated above, is split into two key sections.
+        On the left, you have an interactive LLM chat window where Tidal listens
+        and responds with encouragement. On the right, a task list helps you
+        plan your day. This task list is designed with several interactive
+        features:
+      </p>
+      <ul>
+        <li>A checkbox to mark tasks as complete.</li>
+        <li>
+          A toggle to indicate whether you plan to work on that task today.
+        </li>
+        <li>A snooze button to defer tasks when needed.</li>
+        <li>
+          An Eisenhower matrix quadrant indicator to help prioritize tasks by
+          urgency and importance.
+        </li>
+        <li>A description of the task</li>
+        <li>
+          A "micro action" field—the smallest actionable step to get started.
+        </li>
+        <li>A due date display to keep your schedule organized.</li>
+      </ul>
+      <div style="text-align: center">
+        <img
+          src="img/assistant-habits.png"
+          style="max-width: 100%"
+          alt="Tidal habits list interface"
+        />
+      </div>
+      <p>
+        In addition to managing your tasks, Tidal includes a robust habits
+        tracker to help you build and maintain positive routines. The habits
+        list, shown in the above image, has the following functionality:
+      </p>
+      <ul>
+        <li>
+          A radio button that lets you select the primary habit you want to
+          focus on.
+        </li>
+        <li>
+          An indicator showing which habits you&apos;ve already established.
+        </li>
+        <li>Descriptions for each habit</li>
+        <li>A field specifying when you plan to perform them.</li>
+        <li>The minimal action required to count as progress.</li>
+        <li>
+          An explanation of why each habit is important, connecting your daily
+          actions to your broader goals.
+        </li>
+      </ul>
+      <p>
+        Despite being a relatively simple desktop-only app, I have found it to
+        be an incredibly helpful tool for my own productivity and
+        self-improvement path. I use it every day and find it to be a great way
+        to stay focused and motivated. I plan to beta test it with some friends
+        and produce a web version and mobile app in the future.
+      </p>
+    </div>
+  </body>
+</html>
