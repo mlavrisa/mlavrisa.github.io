@@ -61,6 +61,14 @@
         max-width: 900px;
         margin: 0 auto;
       }
+
+      .imgdiv {
+        text-align: center;
+      }
+
+      .imgdiv img {
+        max-width: 100%;
+      }
     </style>
   </head>
   <body>
@@ -112,12 +120,14 @@
         approach encourages a solid morning routine and continuous personal
         growth, helping you achieve your goals.
       </p>
-      <div style="text-align: center">
-        <img
-          src="img/assistant.png"
-          style="max-width: 100%"
-          alt="Tidal main interface"
-        />
+      <p>
+        The project is made using the eel framework, combining python, and
+        vanilla javascript and css. I make streaming calls to an LLM endpoint
+        for the chat agent, and store all of the tasks, habits, messages and
+        journal entries in a sqlite database.
+      </p>
+      <div class="imgdiv">
+        <img src="img/assistant.png" alt="Tidal main interface" />
       </div>
       <p>
         The main interface, illustrated above, is split into two key sections.
@@ -142,12 +152,8 @@
         </li>
         <li>A due date display to keep your schedule organized.</li>
       </ul>
-      <div style="text-align: center">
-        <img
-          src="img/assistant-habits.png"
-          style="max-width: 100%"
-          alt="Tidal habits list interface"
-        />
+      <div class="imgdiv">
+        <img src="img/assistant-habits.png" alt="Tidal habits list interface" />
       </div>
       <p>
         In addition to managing your tasks, Tidal includes a robust habits

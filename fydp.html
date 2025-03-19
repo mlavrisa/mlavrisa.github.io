@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matt Lavrisa's Portfolio - Tidal Productivity App</title>
+    <style>
+      /* Global styles */
+      body {
+        background-color: white;
+        color: #333;
+        font-family: "Palatino", "Palatino Linotype", "Palatino LT STD",
+          "Book Antiqua";
+        margin: 0;
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3 {
+        margin: 0.5em 0;
+      }
+      .banner a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Banner */
+      .banner {
+        position: relative;
+        background: url("img/AuroraMeteor.jpg") no-repeat center 90%;
+        background-size: cover;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-family: "Helvetica", sans-serif;
+      }
+      .banner h1 {
+        font-size: 3em;
+        display: inline;
+        vertical-align: middle;
+        margin: 0;
+      }
+      .banner .linkedin {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+      .banner .tagline {
+        font-size: 1.2em;
+        margin-top: 10px;
+      }
+
+      /* Section container */
+      .section {
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .imgdiv {
+        text-align: center;
+      }
+
+      .imgdiv img {
+        max-width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Banner Section -->
+    <div class="banner">
+      <div class="banner-content">
+        <h1>
+          <a href="index.html">Matt Lavrisa</a>
+          <!-- LinkedIn Icon, Shamelessly Lifted from Their Site, You're Welcome Linkedin -->
+          <a href="https://www.linkedin.com/in/mattlavrisa" target="_blank">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              data-supported-dps="24x24"
+              fill="white"
+              class="mercado-match"
+              width="24"
+              height="24"
+              focusable="false"
+            >
+              <path
+                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
+              ></path>
+            </svg>
+          </a>
+        </h1>
+        <div class="tagline">
+          Curious about everything, driven by the pursuit of understanding.
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="about">
+      <div>
+        <h2>Fourth Year Engineering Design Project</h2>
+        <p>
+          For my fourth year design capstone project at the University of
+          Waterloo, my team and I developed a pioneering colour-changing
+          reflective technology. Our project won first place in our year, and
+          focused on designing an array of plasmonic tiles immersed in a layer
+          of liquid crystal that alter their colour with applied voltage because
+          of the changing orientation of the liquid crystal under that voltage.
+          We began by simulating the optical response under different refractive
+          index conditions (n = 1.5/1.7) using the RSoft photonic simulation
+          package, which allowed us to select the tile geometries predicted to
+          yield the most pronounced colour shifts. The selected designs were
+          then fabricated in Waterloo's state&ndash;of&ndash;the&ndash;art
+          cleanroom in the QNC, and then tested&mdash;the switching speed
+          achieved was 302 milliseconds, and the voltage&ndash;colour
+          characteristics exhibited low hysteresis despite some non&ndash;linear
+          behavior.
+        </p>
+        <p>
+          For further details on our work, please view our
+          <a href="img/FYDP/poster.pdf" target="_blank">project poster</a>.
+        </p>
+        <div class="imgdiv">
+          <img src="img/FYDP/exploded.png" alt="Exploded view of the device" />
+        </div>
+        <p>
+          <strong>Exploded View:</strong> This image presents a cross-sectional,
+          exploded view of the device. From top to bottom, it shows an ITO glass
+          substrate, followed by a layer of liquid crystal with an interposed
+          gasket, and finally plasmonic nanotiles deposited on an
+          aluminum-coated silicon substrate. This detailed illustration helps in
+          understanding the multilayer structure of the technology.
+        </p>
+        <div class="imgdiv">
+          <img
+            src="img/FYDP/process.png"
+            alt="Fabrication process for the device"
+          />
+        </div>
+        <p>
+          <strong>Fabrication Process:</strong> The fabrication process is
+          depicted here. The image outlines the sequential steps: exposing the
+          photoresist over an aluminum layer using ebeam, developing the
+          pattern, depositing a titanium adhesion layer, adding a gold layer,
+          and finishing with a liftoff. These steps were crucial in forming the
+          precise features of the plasmonic tiles.
+        </p>
+        <div class="imgdiv">
+          <img
+            src="img/FYDP/circles_sem.png"
+            alt="SEM image of the fabricated circles"
+          />
+        </div>
+        <p>
+          <strong>SEM Imaging:</strong> An SEM image captures the circular
+          features produced during fabrication. This micrograph confirms the
+          quality and uniformity of the lithographic patterning that forms the
+          plasmonic tiles.
+        </p>
+        <div class="imgdiv">
+          <img
+            src="img/FYDP/simulation.png"
+            alt="Simulation results for plasmonic tile parameters"
+          />
+        </div>
+        <p>
+          <strong>Simulation Results:</strong> This visualization shows the
+          outcome of scanning the plasmonic tile width (vertical axis) versus
+          the tile pitch (horizontal axis). The simulation estimates the
+          resulting colour at the ordinary and extraordinary axes of the liquid
+          crystal, guiding the selection of the most effective tile geometries.
+        </p>
+        <div class="imgdiv">
+          <img
+            src="img/FYDP/all-tiles.png"
+            alt="3x4 grid of fabricated plasmonic tiles"
+          />
+        </div>
+        <p>
+          <strong>Optimized Grid:</strong> Based on the simulation data, the
+          pitches and widths that offered the most dramatic colour change were
+          selected and fabricated into a 3x4 grid of patches. This grid
+          represents the culmination of our design and optimization efforts.
+        </p>
+        <div class="imgdiv">
+          <img
+            src="img/FYDP/colourchange.gif"
+            alt="Microscope video of the dynamic colour change"
+          />
+        </div>
+        <p>
+          <strong>Dynamic Colour Change:</strong> In this video, captured via
+          microscope, one of the patches is shown undergoing a voltage scan. The
+          device transitions from a greenish hue at low voltage to a light brown
+          tone, effectively demonstrating its responsive optical behaviour.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
